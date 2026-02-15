@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect  } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
@@ -10,25 +10,24 @@ const AdminDashboard = () => {
   const [saveMessage, setSaveMessage] = useState('');
   const navigate = useNavigate();
 
- useEffect(() => {
-  const checkAuth = async () => {
-    try {
-      const response = await axios.get(`${API_URL}/admin/status`, {
-        withCredentials: true
-      });
-
-      if (!response.data?.isAuthenticated) {
-        navigate("/admin");
-      }
-    } catch (error) {
-      navigate("/admin");
-    }
-  };
-
+useEffect(() => {
   checkAuth();
   fetchContent();
-}, [navigate]);
+}, []);
 
+ const checkAuth = async () => {
+  try {
+    const response = await axios.get(`${API_URL}/admin/status`, {
+      withCredentials: true
+    });
+
+    if (!response.data.isAuthenticated) {
+      navigate("/admin");
+    }
+  } catch (error) {
+    navigate("/admin");
+  }
+};
 
   const fetchContent = async () => {
     try {
