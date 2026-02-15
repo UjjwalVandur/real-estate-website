@@ -12,9 +12,9 @@ A full-stack real estate website built with React.js (frontend) and Node.js/Expr
 
 ## 🚀 Live Demo
 
-- **Frontend URL**: [Your Vercel/Netlify URL]
-- **Backend URL**: [Your Render/Railway URL]
-- **Admin Panel**: [Frontend URL]/admin
+- **Frontend URL**: https://real-estate-website-ecru-gamma.vercel.app/
+- **Backend URL**: https://real-estate-backend-wfan.onrender.com
+- **Admin Panel**: https://real-estate-website-ecru-gamma.vercel.app/admin
 
 ### Admin Credentials
 - **Email**: admin@gmail.com
