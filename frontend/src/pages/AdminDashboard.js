@@ -10,10 +10,7 @@ const AdminDashboard = () => {
   const [saveMessage, setSaveMessage] = useState('');
   const navigate = useNavigate();
 
-useEffect(() => {
-  checkAuth();
-  fetchContent();
-});
+
 
  const checkAuth = async () => {
   try {
@@ -29,6 +26,8 @@ useEffect(() => {
   }
 };
 
+
+
   const fetchContent = async () => {
     try {
       const response = await axios.get(`${API_URL}/content`);
@@ -39,6 +38,11 @@ useEffect(() => {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+  checkAuth();
+  fetchContent();
+},[navigate]);
 
   const handleLogout = async () => {
     try {
