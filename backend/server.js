@@ -15,12 +15,13 @@ app.use(cors({
 }));
 app.use(express.json());
 app.use(session({
+  name: "realestate.sid",
   secret: process.env.SESSION_SECRET || 'your-secret-key',
   resave: false,
   saveUninitialized: false,
   cookie: { 
-    // secure: process.env.NODE_ENV === 'production',
-    secure: true,
+     secure: process.env.NODE_ENV === 'production',
+    //secure: true,
     httpOnly: true,
     sameSite: "none",
     maxAge: 24 * 60 * 60 * 1000 // 24 hours
