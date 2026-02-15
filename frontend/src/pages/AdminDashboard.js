@@ -13,7 +13,7 @@ const AdminDashboard = () => {
   useEffect(() => {
     checkAuth();
     fetchContent();
-  }, []);
+  }, [checkAuth]);
 
   const checkAuth = async () => {
     try {
