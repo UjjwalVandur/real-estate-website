@@ -17,7 +17,7 @@ const AdminDashboard = () => {
         withCredentials: true
       });
 
-      if (!response.data?.isAuthenticated) {
+      if (!response.data.isAuthenticated) {
         navigate("/admin");
       }
     } catch (error) {
