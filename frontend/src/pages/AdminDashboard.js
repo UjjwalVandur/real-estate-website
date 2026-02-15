@@ -10,23 +10,25 @@ const AdminDashboard = () => {
   const [saveMessage, setSaveMessage] = useState('');
   const navigate = useNavigate();
 
-  useEffect(() => {
-    checkAuth();
-    fetchContent();
-  }, [checkAuth]);
-
+ useEffect(() => {
   const checkAuth = async () => {
     try {
       const response = await axios.get(`${API_URL}/admin/status`, {
         withCredentials: true
       });
-      if (!response.data.isAuthenticated) {
-        navigate('/admin');
+
+      if (!response.data?.isAuthenticated) {
+        navigate("/admin");
       }
     } catch (error) {
-      navigate('/admin');
+      navigate("/admin");
     }
   };
+
+  checkAuth();
+  fetchContent();
+}, []);
+
 
   const fetchContent = async () => {
     try {
