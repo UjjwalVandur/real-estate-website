@@ -27,7 +27,7 @@ const AdminDashboard = () => {
 
   checkAuth();
   fetchContent();
-}, []);
+}, [navigate]);
 
 
   const fetchContent = async () => {
